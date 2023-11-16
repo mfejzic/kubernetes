@@ -1,0 +1,21 @@
+// add new context to /root/.kube/config
+aws eks --region us-east-1 update-kubeconfig --name eks-cluster_
+kubectl config set-context new-context --cluster=my-cluster --user=my-user --namespace=default
+
+
+//Verify that your EKS cluster is in the "ACTIVE" state:
+aws eks describe-cluster --name eks-cluster_ --region us-east-1
+
+//view all context:
+kubectl config get-contexts
+
+//switch to certain context:
+kubectl config use-context arn:aws:eks:us-east-1:876606637086:cluster/eks-cluster_
+
+//delete context
+kubectl config delete-context arn:aws:eks:us-east-1:876606637086:cluster/eks-cluster_
+
+//Ensure that the kubelet service is running:
+sudo systemctl status kubelet
+
+

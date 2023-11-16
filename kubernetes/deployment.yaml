@@ -1,0 +1,19 @@
+apiVersion: client.authentication.k8s.io/v1
+kind: Deployment
+metadata:
+  name: app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: app-container
+        image: 876606637086.dkr.ecr.us-east-1.amazonaws.com/mfejzic:latest
+        ports:
+        - containerPort: 8080
