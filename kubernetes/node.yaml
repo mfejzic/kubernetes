@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app
+spec:
+  containers:
+  - name: app
+    image: 876606637086.dkr.ecr.us-east-1.amazonaws.com/mfejzic:latest
+    ports: 80
+    - containerPort: 80
+
+
+
+
+
+
+
+
+
