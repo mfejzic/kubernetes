@@ -1,0 +1,9 @@
+apiVersion: eks.amazonaws.com/v1
+kind: FargateProfile
+metadata:
+  name: fargate
+  namespace: default
+spec:
+  podExecutionRoleArn: arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy
+  subnets:
+    - ${private_subnet_1}
